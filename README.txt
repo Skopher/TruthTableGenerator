@@ -5,3 +5,5 @@ courses.
 What I would intend is that this provides a complete truth table
 for a given boolean function. May or may not be useful, but will
 be fun and a good opportunity to learn reflection and parsing.
+
+Cheers, folks!
