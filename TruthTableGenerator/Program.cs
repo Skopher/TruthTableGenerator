@@ -10,6 +10,7 @@ namespace TruthTableGenerator
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello World");
         }
     }
 }
