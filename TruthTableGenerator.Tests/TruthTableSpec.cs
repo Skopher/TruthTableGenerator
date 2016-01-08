@@ -1,8 +1,4 @@
-﻿using System;
-using NUnit.Framework;
-using Moq;
-
-/*
+﻿/*
 Note to self:
 a Statement is composed of statement variables (p, q, r) and logical connectives (AND, OR, NOT...)
 that evaluates to either true or false.
@@ -20,18 +16,28 @@ This may change, as I might write a parser to take a command-line statement (ex:
 instead of a C# function. I would like to also consider building this so that I can use the Truth
 Table Generator like an annotation, decorating ANY function (ex: [GetTruthTable]SomeMethod(...) )
 to get its truth table.
+
+Sending for help:
+http://stackoverflow.com/questions/34669795/c-defining-a-delegate-that-takes-n-boolean-args-to-extract-argument-names-lat
  */
+
+using System;
+using NUnit.Framework;
+using Moq;
+using TruthTableGenerator;
 
 namespace TruthTableGenerator.Tests
 {
     [TestFixture]
     public class TruthTableSpec
     {
+        public bool threeArgFunction(bool foo, bool bar, bool bird) { return false; }
+
         [Test]
-        public void GivenABooleanFunctionWithArgumentsStatementSnifferShouldExtractArgumentNames()
+        public void GivenBooleanFunctionWithThreeArgumentsStatementSnifferShouldExtractThreeArgumentNames()
         {
             // Setup
-            IFunctionSniffer functionSniffer = new FunctionSniffer(threeArgFunction);
+            IStatementSniffer functionSniffer = new CSharpFunctionSniffer(CSharpBoolDelegate threeArgFunction);
 
             // Action
             List<string> actualArgs = functionSniffer.GetVariables();
