@@ -1,14 +1,20 @@
-﻿using System;
-using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+﻿
+/*
+using System;
+using NUnit.Framework;
+using TruthTableGenerator;
 
 namespace TruthTableGenerator.Tests
 {
-    [TestClass]
+
+    [TestFixture]
     public class UnitTest1
     {
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
+            Assert.IsTrue(false);
         }
     }
 }
+*/
