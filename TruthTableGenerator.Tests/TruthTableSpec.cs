@@ -19,8 +19,15 @@ to get its truth table.
 
 Sending for help:
 http://stackoverflow.com/questions/34669795/c-defining-a-delegate-that-takes-n-boolean-args-to-extract-argument-names-lat
- */
+ 
+Update:
+I was hoping the C# function analyzer would be fairly supported/straight-forward, but it is not. 
+After some responses on StackOverflow, I've decided that focusing on building an interpretter would be more
+beneficial in the long-run. I'll abandon the previous effort for now, as there will be plenty to learn
+building an interpretter (tokenizer, lexer, etc.).
+*/
 
+/*
 using System;
 using NUnit.Framework;
 using Moq;
@@ -49,3 +56,4 @@ namespace TruthTableGenerator.Tests
         }
     }
 }
+*/
