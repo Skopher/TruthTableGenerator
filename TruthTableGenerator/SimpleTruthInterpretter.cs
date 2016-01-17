@@ -126,7 +126,7 @@ namespace TruthTableGenerator
             this.eat(TokenType.BOOL);
 
             // Evaluate the sentence and return the result
-            return (left.getTokenValue() && right.getTokenValue());
+            return ((bool)left.getTokenValue() && (bool)right.getTokenValue());
         }
     }
 }

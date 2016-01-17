@@ -32,9 +32,9 @@ namespace TruthTableGenerator.Tests.Integration_Tests
         [TestCase("0&0", ExpectedResult = false)]
         public bool GivenANDexpressionsThenInterpretterShouldReturnCorrectANDInterpretation(string ANDexpression)
         {
-            ITruthInterpretter interpretter = new SimpleTruthInterpretter();
+            ITruthInterpretter interpretter = new SimpleTruthInterpretter(ANDexpression);
 
-            bool result = interpretter.Interpret(ANDexpression);
+            bool result = interpretter.Interpret();
 
             return result;
         }
