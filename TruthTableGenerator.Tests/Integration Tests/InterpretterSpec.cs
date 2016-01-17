@@ -26,7 +26,7 @@ namespace TruthTableGenerator.Tests.Integration_Tests
     [TestFixture]
     class InterpretterSpec
     {
-        //[TestCase("1&1", ExpectedResult = true)]
+        [TestCase("1&1", ExpectedResult = true)]
         [TestCase("1&0", ExpectedResult = false)]
         [TestCase("0&1", ExpectedResult = false)]
         [TestCase("0&0", ExpectedResult = false)]
