@@ -45,7 +45,9 @@
     <Compile Include="ITruthInterpretter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TruthInterpretter.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Token.cs" />
+    <Compile Include="SimpleTruthInterpretter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
