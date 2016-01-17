@@ -25,7 +25,7 @@ namespace TruthTableGenerator
 
         public override string ToString()
         {
-            return String.Format("Token of type '{0}', value '{1}'", this.dataType.ToString(), this.dataValue.ToString());
+            return String.Format("Token of type '{0}', value '{1}'", this.tokenType.ToString(), this.tokenValue.ToString());
         }
 
         // Getters

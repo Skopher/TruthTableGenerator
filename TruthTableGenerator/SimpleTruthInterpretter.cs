@@ -66,8 +66,6 @@ namespace TruthTableGenerator
                 currentChar = text[this.currentPosition];
             }
 
-            // The below is a manual implementation of a syntax tree...?
-
             bool boolResult;
             if ( Boolean.TryParse(currentChar.ToString(), out boolResult) )
             {
@@ -105,9 +103,30 @@ namespace TruthTableGenerator
             }
         }
 
-        public bool Interpret(string expr)
+
+        /// <summary>
+        /// Interpret the boolean expression and return the result.
+        /// </summary>
+        /// <returns></returns>
+        public bool Interpret()
         {
-            return true;    
+            // Set the current token
+            this.currentToken = this.getNextToken();
+
+            // Expect a boolean on the left
+            Token left = this.currentToken;
+            this.eat(TokenType.BOOL);
+
+            // Expect an "AND" operator as the next token
+            Token oper = this.currentToken;
+            this.eat(TokenType.AND);
+
+            // Lastly, expect another boolean on the right
+            Token right = this.currentToken;
+            this.eat(TokenType.BOOL);
+
+            // Evaluate the sentence and return the result
+            return (left.getTokenValue() && right.getTokenValue());
         }
     }
 }

@@ -9,8 +9,6 @@ namespace TruthTableGenerator
     public interface ITruthInterpretter
     {
 
-        bool Interpret(string expression);
-
-        //Tokenize(string expression)
+        bool Interpret();
     }
 }
