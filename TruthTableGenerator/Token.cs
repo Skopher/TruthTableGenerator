@@ -8,8 +8,8 @@ namespace TruthTableGenerator
 {
     public class Token
     {
-        private Token dataType;
-        private object dataValue;
+        private TokenType tokenType;
+        private object tokenValue;
 
         /// <summary>
         /// Initializes a new Token object, which encapsulates the 
@@ -17,10 +17,10 @@ namespace TruthTableGenerator
         /// </summary>
         /// <param name="type">Token type (ex: Token.AND)</param>
         /// <param name="value">value of the Token (ex: "&")</param>
-        public Token(Token type, object value)
+        public Token(TokenType type, object value)
         {
-            this.dataType = type;
-            this.dataValue = value;
+            this.tokenType = type;
+            this.tokenValue = value;
         }
 
         public override string ToString()
@@ -28,6 +28,16 @@ namespace TruthTableGenerator
             return String.Format("Token of type '{0}', value '{1}'", this.dataType.ToString(), this.dataValue.ToString());
         }
 
+        // Getters
+        public TokenType getTokenType()
+        {
+            return this.tokenType;
+        }
+
+        public object getTokenValue()
+        {
+            return this.tokenValue; 
+        }
 
     }
 }

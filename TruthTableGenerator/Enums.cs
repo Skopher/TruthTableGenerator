@@ -11,7 +11,8 @@ namespace TruthTableGenerator
     /// </summary>
     public enum TokenType
     {
-        AND, // logical AND
-        EOF  // end of file
+        BOOL,   // Boolean values 
+        AND,    // logical AND
+        EOF     // end of file
     };
 }
