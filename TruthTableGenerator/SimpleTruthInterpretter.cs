@@ -34,15 +34,6 @@ namespace TruthTableGenerator
         }
 
         /// <summary>
-        /// Not 100% sure why the blog author created a method to raise an error. 
-        /// Just copying exactly for now, maybe there will be a reason later...
-        /// </summary>
-        private void raiseError()
-        {
-            throw new Exception("Error parsing the expression");
-        }
-
-        /// <summary>
         /// Lexical analyzer; breaks expression (sentence) apart one token at a time.
         /// TODO: Violates Single Responsibility. Break apart later.
         /// </summary>
@@ -50,7 +41,6 @@ namespace TruthTableGenerator
         {
             string text = this.expression;
             char currentChar = '\0'; // initialize to NULL
-            object actualChar = null;
             Token token = null;
 
             // If the current position is greater than the
@@ -66,10 +56,9 @@ namespace TruthTableGenerator
                 currentChar = text[this.currentPosition];
             }
 
-            bool boolResult;
-            if ( Boolean.TryParse(currentChar.ToString(), out boolResult) )
+            if ( currentChar == '1' || currentChar == '0' )
             {
-                token = new Token(TokenType.BOOL, boolResult);
+                token = new Token(TokenType.BOOL, currentChar);
                 this.currentPosition++;
                 return token;
             }
@@ -80,9 +69,8 @@ namespace TruthTableGenerator
                 return token;
             }
 
-            this.raiseError();
-            return null;
-
+            throw new Exception("Could not recognize the character" + currentChar.ToString());
+           
         }
 
         /// <summary>
@@ -99,7 +87,9 @@ namespace TruthTableGenerator
             }
             else
             {
-                this.raiseError();
+                throw new Exception(
+                    String.Format("Error in Eat: current token {0} doesn't match expected token type {1}.", this.currentToken.getTokenType(), tokenType)
+                );
             }
         }
 
